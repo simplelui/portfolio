@@ -6,12 +6,12 @@ export default function Projects() {
   const [filter, setFilter] = useState("All");
 
   const projectList = [
-  { name: "Wanderly", desc: "Web Development", category: "Web Development", img: "./src/Images/wanderly.jpg" },
-  { name: "Orizon", desc: "Web Development", category: "Web Development", img: "./src/Images/1.jpg" },
-  { name: "Fundo", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/Images/2.jpg" },
-  { name: "Rhajlu Adventure", desc: "Game Development", category: "Game Development", img: "./src/Images/RJL.png" },
-  { name: "DSM.", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/Images/3.jpg" },
-  { name: "MetaSpark", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/Images/4.jpg" },
+  { name: "Wanderly", desc: "Web Development", category: "Web Development", img: "./src/images/wanderly.jpg" },
+  { name: "Orizon", desc: "Web Development", category: "Web Development", img: "./src/images/1.jpg" },
+  { name: "Fundo", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/images/2.jpg" },
+  { name: "Rhajlu Adventure", desc: "Game Development", category: "Game Development", img: "./src/images/RJL.png" },
+  { name: "DSM.", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/images/3.jpg" },
+  { name: "MetaSpark", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/images/4.jpg" },
 ];
 
   const filteredProjects = filter === "All" ? projectList : projectList.filter((project) => project.category === filter);
