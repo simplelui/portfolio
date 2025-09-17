@@ -3,7 +3,6 @@ import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-// import your project images (update filenames if different)
 import p1 from "../images/1.jpg";
 import p2 from "../images/2.jpg";
 import p3 from "../images/3.jpg";
@@ -36,6 +35,43 @@ export default function Projects() {
       category: "Video",
       desc: "A cinematic short film edited with Adobe Premiere Pro and After Effects.",
       img: p4,
+    },
+    // merged in from remote
+    {
+      title: "Wanderly",
+      category: "Web",
+      desc: "Web Development",
+      img: "/src/images/wanderly.jpg",
+    },
+    {
+      title: "Orizon",
+      category: "Web",
+      desc: "Web Development",
+      img: "/src/images/1.jpg",
+    },
+    {
+      title: "Fundo",
+      category: "Design",
+      desc: "UI/UX Design",
+      img: "/src/images/2.jpg",
+    },
+    {
+      title: "Rhajlu Adventure",
+      category: "Game",
+      desc: "Game Development",
+      img: "/src/images/RJL.png",
+    },
+    {
+      title: "DSM.",
+      category: "Design",
+      desc: "UI/UX Design",
+      img: "/src/images/3.jpg",
+    },
+    {
+      title: "MetaSpark",
+      category: "Design",
+      desc: "UI/UX Design",
+      img: "/src/images/4.jpg",
     },
   ];
 
