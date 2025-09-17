@@ -23,40 +23,49 @@ export default function Resume() {
             Education
           </h3>
           <div className="relative pl-8">
-            <div className="absolute top-0 bottom-0 w-1 bg-white rounded left-0"></div>
+            {/* Timeline Line */}
+            <div className="absolute top-0 bottom-0 w-1 bg-[#E5E5E5] rounded left-0"></div>
             <div className="relative flex flex-col gap-0">
-              <div className="relative z-10 p-6 bg-transparent rounded-lg ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-[#F5F5F5] mb-1">Rizal Technological University</h4>
-                <h4 className="text-sm text-[#BDBDBD] mb-1">College</h4>
-                <p className="text-[#BDBDBD] font-bold text-sm mb-1">2023 — Present</p>
-                <p className="text-[#A5A5A5] text-sm">Academic Achiever for first year and second year</p>
-              </div>
-              <div className="relative z-10 p-6 bg-transparent rounded-lg ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-[#F5F5F5] mb-1">Rizal Technological University</h4>
-                <h4 className="text-sm text-[#BDBDBD] mb-1">Senior Highschool</h4>
-                <p className="text-[#BDBDBD] font-bold text-sm mb-1">2021 — 2023</p>
-                <p className="text-[#A5A5A5] text-sm">Graduated with honor</p>
-              </div>
-              <div className="relative z-10 p-6 bg-transparent rounded-lg  ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-[#F5F5F5] mb-1">Good Shepherd Christian School</h4>
-                <h4 className="text-sm text-[#BDBDBD] mb-1">Junior Highschool</h4>
-                <p className="text-[#BDBDBD] font-bold text-sm mb-1">2017 — 2021</p>
-                <p className="text-[#A5A5A5] text-sm">Loyalty Award</p>
-              </div>
-              <div className="relative z-10 p-6 bg-transparent rounded-lg ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-[#F5F5F5] mb-1">Maranatha Christian Academy</h4>
-                <h4 className="text-sm text-[#BDBDBD] mb-1">Pre School and Elementary</h4>
-                <p className="text-[#BDBDBD] font-bold text-sm mb-1">2007 - 2017</p>
-                <p className="text-[#A5A5A5] text-sm">
-                  First Honor <br />
-                  - Best in English, Science, Math, and History <br />
-                  - Loyalty Award 
-                </p>
-              </div>
+              {[
+                {
+                  school: "Rizal Technological University",
+                  level: "College",
+                  year: "2023 — Present",
+                  desc: "Academic Achiever for first year and second year",
+                },
+                {
+                  school: "Rizal Technological University",
+                  level: "Senior Highschool",
+                  year: "2021 — 2023",
+                  desc: "Graduated with honor",
+                },
+                {
+                  school: "Good Shepherd Christian School",
+                  level: "Junior Highschool",
+                  year: "2017 — 2021",
+                  desc: "Loyalty Award",
+                },
+                {
+                  school: "Maranatha Christian Academy",
+                  level: "Pre School and Elementary",
+                  year: "2007 - 2017",
+                  desc: `First Honor
+- Best in English, Science, Math, and History
+- Loyalty Award`,
+                },
+              ].map((edu, idx) => (
+                <div
+                  key={idx}
+                  className="relative z-10 p-6 bg-transparent rounded-lg ml-0"
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
+                  <h4 className="text-lg font-bold text-[#F5F5F5] mb-1">{edu.school}</h4>
+                  <h4 className="text-sm text-[#BDBDBD] mb-1">{edu.level}</h4>
+                  <p className="text-[#BDBDBD] font-bold text-sm mb-1">{edu.year}</p>
+                  <p className="text-[#A5A5A5] text-sm whitespace-pre-line">{edu.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -67,44 +76,46 @@ export default function Resume() {
             Experience
           </h3>
           <div className="relative pl-8">
-            <div className="absolute top-0 bottom-0 w-1 bg-white rounded left-0"></div>
+            {/* Timeline Line */}
+            <div className="absolute top-0 bottom-0 w-1 bg-[#E5E5E5] rounded left-0"></div>
             <div className="relative flex flex-col gap-0">
-              <div className="relative z-10 p-6 bg-transparent rounded-lg ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-white mb-1">Web Developer</h4>
-                <p className="text-white font-bold text-sm mb-1">2023 - Present</p>
-                <p className="text-gray-400 text-sm">
-                  - Built responsive websites with React and Tailwind CSS.<br />
-                  - Focused on clean code, speed, and usability.
-                </p>
-              </div>
-              <div className="relative z-10 p-6 bg-transparent rounded-lg ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-white mb-1">Video Editor</h4>
-                <p className="text-white font-bold text-sm mb-1">2019 - Present</p>
-                <p className="text-gray-400 text-sm">
-                  - Edited videos using Premiere Pro, Davinci Resolve, and Capcut. <br />
-                  - Added color grading, transitions, and sound design.
-                </p>
-              </div>
-              <div className="relative z-10 p-6 bg-transparent rounded-lg  ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-white mb-1">Game Develepor</h4>
-                <p className="text-white font-bold text-sm mb-1">2025 - Present</p>
-                <p className="text-gray-400 text-sm">
-                  - Developed interactive 2D games in Godot Engine. <br />
-                  - Designed gameplay mechanics and smooth controls.
-                </p>
-              </div>
-              <div className="relative z-10 p-6 bg-transparent rounded-lg ml-0">
-                <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
-                <h4 className="text-lg font-bold text-white mb-1">UI/UX Designer</h4>
-                <p className="text-white font-bold text-sm mb-1">2022 - Present</p>
-                <p className="text-gray-400 text-sm">
-                  - Created wireframes and prototypes in Figma. <br />
-                  - Blended aesthetics with functionality for better user flow.
-                </p>
-              </div>
+              {[
+                {
+                  role: "Web Developer",
+                  year: "2023 - Present",
+                  desc: `- Built responsive websites with React and Tailwind CSS.
+- Focused on clean code, speed, and usability.`,
+                },
+                {
+                  role: "Video Editor",
+                  year: "2019 - Present",
+                  desc: `- Edited videos using Premiere Pro, Davinci Resolve, and Capcut.
+- Added color grading, transitions, and sound design.`,
+                },
+                {
+                  role: "Game Developer",
+                  year: "2025 - Present",
+                  desc: `- Developed interactive 2D games in Godot Engine.
+- Designed gameplay mechanics and smooth controls.`,
+                },
+                {
+                  role: "UI/UX Designer",
+                  year: "2022 - Present",
+                  desc: `- Created wireframes and prototypes in Figma.
+- Blended aesthetics with functionality for better user flow.`,
+                },
+              ].map((exp, idx) => (
+                <div
+                  key={idx}
+                  className="relative z-10 p-6 bg-transparent rounded-lg ml-0"
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute w-3 h-3 bg-black border-2 border-white rounded-full left-[-36px] top-8"></div>
+                  <h4 className="text-lg font-bold text-white mb-1">{exp.role}</h4>
+                  <p className="text-white font-bold text-sm mb-1">{exp.year}</p>
+                  <p className="text-gray-400 text-sm whitespace-pre-line">{exp.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

@@ -1,67 +1,112 @@
+// src/components/projects.jsx
+import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useState } from "react";
+
+// import your project images (update filenames if different)
+import p1 from "../images/1.jpg";
+import p2 from "../images/2.jpg";
+import p3 from "../images/3.jpg";
+import p4 from "../images/4.jpg";
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
 
-  const projectList = [
-    { name: "Wanderly", desc: "Web Development", category: "Web Development", img: "./src/images/wanderly.jpg" },
-    { name: "Orizon", desc: "Web Development", category: "Web Development", img: "./src/images/1.jpg" },
-    { name: "Fundo", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/images/2.jpg" },
-    { name: "RhajLu Adventure", desc: "Game Development", category: "Game Development", img: "./src/images/RJL.png" },
-    { name: "DSM.", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/images/3.jpg" },
-    { name: "MetaSpark", desc: "UI/UX Design", category: "UI/UX Design", img: "./src/images/4.jpg" },
-
+  const projects = [
+    {
+      title: "Portfolio Website",
+      category: "Web",
+      desc: "A modern responsive portfolio website built with React and Tailwind.",
+      img: p1,
+    },
+    {
+      title: "Pixel Adventure Game",
+      category: "Game",
+      desc: "A 2D adventure game created using Unity with pixel art assets.",
+      img: p2,
+    },
+    {
+      title: "UI/UX Design Dashboard",
+      category: "Design",
+      desc: "A clean and user-friendly dashboard concept made in Figma.",
+      img: p3,
+    },
+    {
+      title: "Video Editing Project",
+      category: "Video",
+      desc: "A cinematic short film edited with Adobe Premiere Pro and After Effects.",
+      img: p4,
+    },
   ];
 
-  const filteredProjects = filter === "All" ? projectList : projectList.filter((project) => project.category === filter);
+  const filters = ["All", "Web", "Game", "Design", "Video"];
+  const filteredProjects =
+    filter === "All"
+      ? projects
+      : projects.filter((p) => p.category === filter);
 
   return (
     <motion.section
       id="projects"
-      className="py-4 px-4 max-w-5xl mx-auto"
+      className="py-6 px-4 max-w-6xl mx-auto"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="w-full bg-[#1B1B1B] rounded-2xl border border-[#2A2A2A] shadow-xl p-10">
-        <h2 className="text-4xl font-bold text-white mb-8 flex items-center gap-3">
+      <div className="bg-[#1B1B1B] rounded-2xl shadow-xl border border-[#2A2A2A] p-6 sm:p-8 md:p-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
           Projects
         </h2>
-        <span className="block w-10 h-1 bg-white rounded ml-0"></span>
-        <br />
-        {/* Filter Buttons */}
-        <div className="flex gap-6 mb-8">
-          {["All", "UI/UX Design", "Game Development", "Web Development"].map((cat) => (
+        <span className="block w-10 h-1 bg-white rounded mb-6"></span>
+
+        {/* Filters */}
+        <div className="flex flex-wrap gap-3 mb-6 justify-center sm:justify-start">
+          {filters.map((f) => (
             <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`rounded-2xl border px-3 py-1 font-semibold transition-colors ${
-                filter === cat
-                  ? "bg-white text-black border-white"
-                  : "bg-[#1B1B1B] border-[#2A2A2A] text-white hover:bg-[#2A2A2A]"
+              key={f}
+              onClick={() => setFilter(f)}
+              className={`px-4 py-2 rounded-full text-sm sm:text-base font-medium transition-colors ${
+                filter === f
+                  ? "bg-white/90 text-black"
+                  : "bg-[#232324] text-gray-300 hover:bg-white/20 hover:text-white"
               }`}
             >
-              {cat}
+              {f}
             </button>
           ))}
         </div>
-        {/* Projects */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {filteredProjects.map((project) => (
+
+        {/* Project grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {filteredProjects.map((project, idx) => (
             <motion.div
-              whileHover={{ 
-                scale: 1.03,               // slight zoom-in
-                boxShadow: "0 0 20px rgba(255,255,255,0.15)" // soft white glow
+              key={idx}
+              whileHover={{
+                scale: 1.03,
+                boxShadow: "0 8px 30px rgba(255,255,255,0.04)",
               }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              key={project.name} // or post.title in Blog.jsx
-              className="bg-[#232324] rounded-xl shadow p-4 flex flex-col"
+              className="bg-[#232324] rounded-xl shadow overflow-hidden flex flex-col h-full"
             >
-              <img src={project.img} alt={project.name} className="rounded-lg mb-4 object-cover h-40 w-full" />
-              <div className="font-bold text-white">{project.name}</div>
-              <div className="text-gray-400 text-sm">{project.desc}</div>
+              <img
+                src={project.img}
+                alt={project.title}
+                className="w-full h-40 sm:h-48 object-cover"
+              />
+              <div className="p-6 flex flex-col flex-1">
+                <div className="text-gray-400 text-xs mb-2">
+                  {project.category}
+                </div>
+                <h3 className="text-lg sm:text-xl font-bold text-white">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 text-sm sm:text-base mt-2 flex-1">
+                  {project.desc}
+                </p>
+                <button className="mt-4 self-start text-sm text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-colors">
+                  View Project
+                </button>
+              </div>
             </motion.div>
           ))}
         </div>

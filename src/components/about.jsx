@@ -10,14 +10,15 @@ export default function About() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="w-full bg-[#1B1B1B] rounded-2xl shadow-xl p-10 border border-[#2A2A2A] flex flex-col gap-10">
+      <div className="w-full bg-[#1B1B1B] rounded-2xl shadow-xl p-6 sm:p-8 md:p-10 border border-[#2A2A2A] flex flex-col gap-10">
         <div>
-          <h2 className="text-4xl font-bold text-white mb-2 flex items-center gap-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 flex items-center gap-3">
             About Me
-          </h2> <br />
+          </h2>
+          <br />
           <span className="block w-10 h-1 bg-white rounded ml-0"></span>
           <br />
-          <p className="text-gray-300 leading-relaxed mb-4">
+          <p className="text-gray-300 leading-relaxed text-sm sm:text-base mb-4">
             I am a 21-year-old IT student specializing in web development, 
             with a passion for learning and expanding my skills throughout my academic and professional journey. 
             I have experience designing and developing websites, as well as creating games using the Godot Engine. 
@@ -32,63 +33,49 @@ export default function About() {
           </p>
         </div>
         <div>
-          <h3 className="text-3xl font-bold text-white mb-4">
+          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
             What I'm Doing
           </h3>
           <br />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-[#232324] rounded-xl p-6 flex items-center gap-3 shadow">
-              <span className="text-white text-3xl">
-                <i className="fas fa-pencil-ruler"></i>
-              </span>
-              <div>
-                <div className="font-bold text-white">UI/UX Design</div>
-                <div className="text-gray-400 text-sm">
-                  I create sleek, modern UI/UX designs that are bold, intuitive, and leave a lasting impression using Figma.
+            {[
+              {
+                icon: "fas fa-pencil-ruler",
+                title: "UI/UX Design",
+                desc: "I create sleek, modern UI/UX designs that are bold, intuitive, and leave a lasting impression using Figma.",
+              },
+              {
+                icon: "fas fa-code",
+                title: "Web Development",
+                desc: "Delivering high-quality, professional websites that are functional, user-friendly, and visually engaging.",
+              },
+              {
+                icon: "fas fa-mobile-alt",
+                title: "Game Development",
+                desc: "Designing and developing interactive games using the Godot engine, combining creativity and technical skills.",
+              },
+              {
+                icon: "fas fa-camera",
+                title: "Video Editing",
+                desc: "Crafting compelling video content using Adobe Premiere, DaVinci Resolve, and CapCut with storytelling focus.",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-[#232324] rounded-xl p-6 flex items-start gap-3 shadow"
+              >
+                <span className="text-white text-2xl sm:text-3xl">
+                  <i className={item.icon}></i>
+                </span>
+                <div>
+                  <div className="font-bold text-white">{item.title}</div>
+                  <div className="text-gray-400 text-sm">{item.desc}</div>
                 </div>
               </div>
-            </div>
-            <div className="bg-[#232324] rounded-xl p-6 flex items-center gap-3 shadow">
-              <span className="text-white text-3xl">
-                <i className="fas fa-code"></i> 
-              </span>
-              <div>
-                <div className="font-bold text-white">Web Development</div>
-                <div className="text-gray-400 text-sm">
-                  Delivering high-quality, professional websites that are functional, user-friendly, and visually engaging.
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#232324] rounded-xl p-6 flex items-center gap-3 shadow">
-              <span className="text-white text-3xl">
-                <i className="fas fa-mobile-alt"></i>
-              </span>
-              <div>
-                <div className="font-bold text-white">Game Development</div>
-                <div className="text-gray-400 text-sm">
-                  Designing and developing interactive games using the Godot engine, combining creativity and technical skills to craft engaging, intuitive gameplay experiences.
-                </div>
-              </div>
-            </div>
-            <div className="bg-[#232324] rounded-xl p-6 flex items-center gap-3 shadow">
-              <span className="text-white text-3xl">
-                <i className="fas fa-camera"></i>
-              </span>
-              <div>
-                <div className="font-bold text-white">Video Editing</div>
-                <div className="text-gray-400 text-sm">
-                  Crafting compelling video content using Adobe Premiere, DaVinci Resolve, and CapCut, blending technical precision with creative storytelling to deliver engaging visual experiences.
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </motion.section>
   );
 }
-
-
-
-
-
