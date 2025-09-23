@@ -7,6 +7,7 @@ import p1 from "../images/1.jpg";
 import p2 from "../images/2.jpg";
 import p3 from "../images/3.jpg";
 import p4 from "../images/4.jpg";
+import p5 from "../images/rjl.png";
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
@@ -41,37 +42,37 @@ export default function Projects() {
       title: "Wanderly",
       category: "Web",
       desc: "Web Development",
-      img: "/src/images/wanderly.jpg",
+      img: p4,
     },
     {
       title: "Orizon",
       category: "Web",
       desc: "Web Development",
-      img: "/src/images/1.jpg",
+      img: p1,
     },
     {
       title: "Fundo",
       category: "Design",
       desc: "UI/UX Design",
-      img: "/src/images/2.jpg",
+      img: p2,
     },
     {
       title: "Rhajlu Adventure",
       category: "Game",
       desc: "Game Development",
-      img: "/src/images/RJL.png",
+      img: p5,
     },
     {
       title: "DSM.",
       category: "Design",
       desc: "UI/UX Design",
-      img: "/src/images/3.jpg",
+      img: p2,
     },
     {
       title: "MetaSpark",
       category: "Design",
       desc: "UI/UX Design",
-      img: "/src/images/4.jpg",
+      img: p1,
     },
   ];
 
