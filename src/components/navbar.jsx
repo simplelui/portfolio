@@ -18,7 +18,7 @@ export default function Navbar() {
                 <li key={link}>
                   <Link
                     to={path}
-                    className={`px-3 py-2 font-semibold transition ${
+                    className={`px-3 py-2 font-semibold transition-colors hover:text-white ${
                       isActive ? "text-white" : "text-gray-300 hover:text-white"
                     }`}
                   >
@@ -32,8 +32,8 @@ export default function Navbar() {
       </div>
 
       {/* Mobile navbar (bottom) */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full z-40 bg-[#1B1B1B] border-t border-[#2A2A2A]">
-        <div className="flex justify-around py-2">
+      <div className="md:hidden fixed bottom-0 left-0 w-full z-40 bg-[#1B1B1B] border-t border-[#2A2A2A] hover:text-white">
+        <div className="flex justify-around py-2 hover:text-white">
           {links.map((link) => {
             const path = `/${link.toLowerCase()}`;
             const isActive = location.pathname === path;
@@ -41,7 +41,7 @@ export default function Navbar() {
               <Link
                 key={link}
                 to={path}
-                className={`text-sm font-medium ${
+                className={`px-3 py-2 font-semibold transition-colors hover:text-white ${
                   isActive ? "text-white" : "text-gray-300"
                 }`}
               >
