@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import { useState } from "react";
 import profileimg from "../images/profile.png";
@@ -38,6 +39,35 @@ export default function SidebarMobile() {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
           >
+=======
+import { useState } from "react";
+import profileimg from "../images/profile.png";
+
+export default function SidebarMobile() {
+  const [showContact, setShowContact] = useState(false);
+
+  return (
+    <div className="md:hidden w-full mt-4 px-4">
+      <div className="flex flex-col items-center bg-[#1B1B1B] rounded-2xl p-6">
+        <img
+          src={profileimg}
+          alt="Profile"
+          className="w-32 h-32 rounded-full mb-2"
+        />
+        <h2 className="text-xl font-bold">Luis De Taza</h2>
+        <span className="text-sm text-gray-300">Web Developer Student</span>
+
+        <button
+          onClick={() => setShowContact(!showContact)}
+          className="mt-4 w-full bg-[#232324] text-white py-2 rounded-lg flex justify-between items-center px-4"
+        >
+          <span>Contact Info</span>
+          <span>{showContact ? "▲" : "▼"}</span>
+        </button>
+
+        {showContact && (
+          <div className="mt-4 flex flex-col gap-4 w-full text-left">
+>>>>>>> c8b104b2d0cbb399fa2a91b411ae39982394a949
             {/* Email */}
             <div className="flex items-center gap-3">
               <span className="bg-[#232324] p-2 rounded-lg">
@@ -90,15 +120,26 @@ export default function SidebarMobile() {
                 <div className="text-sm">Mandaluyong City</div>
               </div>
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> c8b104b2d0cbb399fa2a91b411ae39982394a949
             {/* Social Icons */}
             <div className="flex gap-4 mt-4">
               <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-linkedin-in"></i></a>
               <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-instagram"></i></a>
               <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-github"></i></a>
             </div>
+<<<<<<< HEAD
           </motion.div>
         )}
       </AnimatePresence>
     </motion.div>
+=======
+          </div>
+        )}
+      </div>
+    </div>
+>>>>>>> c8b104b2d0cbb399fa2a91b411ae39982394a949
   );
 }
