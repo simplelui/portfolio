@@ -32,7 +32,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile navbar (bottom) */}
-      <div className="md:hidden fixed bottom-2 left-1/2 -translate-x-1/2 w-[95vw] max-w-2xl z-40 bg-[#1B1B1B]/10 border border-[#2A2A2A] backdrop-blur-xl shadow-2xl rounded-2xl ring-2 ring-white/10 hover:text-white transition-all duration-300">
+      <div className="md:hidden fixed bottom-2 left-1/2 -translate-x-1/2 max-w-2xl z-40 bg-[#1B1B1B]/10 border border-[#2A2A2A] backdrop-blur-xl shadow-2xl rounded-2xl ring-2 ring-white/10 hover:text-white transition-all duration-300">
         <div className="flex justify-around py-3 hover:text-white">
           {links.map((link) => {
             const path = `/${link.toLowerCase()}`;

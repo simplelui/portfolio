@@ -1,103 +1,97 @@
+
 import { useState } from "react";
 import profileimg from "../images/profile.png";
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
+
 export default function SidebarMobile() {
   const [showContact, setShowContact] = useState(false);
-    return (
-      <motion.div
-        className="md:hidden fixed top-2 left-1/5 -translate-x-1/2 w-[92vw] max-w-2xl z-20 bg-[#1B1B1B]/50 border border-[#2A2A2A] backdrop-blur-xl shadow-2xl rounded-2xl px-6 py-4 flex flex-col items-center"
-        style={{ marginBottom: "env(safe-area-inset-bottom, 0)" }}
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 120, damping: 12 }}
-      >
+  return (
+    <motion.div
+      className="md:hidden fixed top-3 left-1/5 -translate-x-1/2 w-[92vw] max-w-xl z-30 bg-gradient-to-br from-[#232324]/80 via-[#1B1B1B]/70 to-[#232324]/80 border border-[#232324] backdrop-blur-2xl shadow-2xl rounded-2xl px-5 py-4 flex flex-col items-center"
+      style={{ marginBottom: "env(safe-area-inset-bottom, 0)" }}
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: 'spring', stiffness: 120, damping: 14 }}
+    >
       <img
         src={profileimg}
         alt="Profile"
-        className="w-16 h-16 rounded-full mb-2 shadow"
+        className="w-14 h-14 rounded-full mb-1 shadow-lg border-2 border-[#232324]"
+        style={{ objectFit: 'cover' }}
       />
-      <h2 className="text-lg font-bold tracking-wide">Luis De Taza</h2>
-      <span className="text-xs text-gray-300 mb-2">Web Developer Student</span>
+      <h2 className="text-base font-semibold tracking-wide mt-1">Luis De Taza</h2>
+      <span className="text-xs text-gray-400 mb-1">Web Developer Student</span>
 
       <button
         onClick={() => setShowContact(!showContact)}
-        className="mt-2 w-full bg-[#232324]/80 text-white py-2 rounded-lg flex justify-between items-center px-4 shadow hover:bg-[#232324]/90 transition-colors"
+        className="mt-2 w-10 h-10 flex items-center justify-center rounded-full border border-white bg-[#232324]/80 text-white shadow hover:bg-white/80 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
+        aria-label="Show contact info"
       >
-        <span>Contact Info</span>
-        <span className="text-lg">{showContact ? "▲" : "▼"}</span>
+        <svg width="22" height="22" fill="none" stroke="currentColor" className={`transition-transform ${showContact ? 'rotate-180' : ''}`}> 
+          <path d="M6 9l5 5 5-5" strokeWidth="2" strokeLinecap="round"/>
+        </svg>
       </button>
 
       <AnimatePresence>
         {showContact && (
           <motion.div
-            className="mt-4 flex flex-col gap-4 w-full text-left"
+            className="mt-3 flex flex-col gap-2 w-full text-left items-center"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.18 }}
           >
-                    {/* Email */}
-                    <div className="flex items-center gap-3">
-                      <span className="bg-[#232324] p-2 rounded-lg">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" className="text-white">
-                          <rect x="2" y="5" width="16" height="10" rx="2" strokeWidth="1.5"/>
-                          <path d="M2 5l8 7 8-7" strokeWidth="1.5" strokeLinecap="round"/>
-                        </svg>
-                      </span>
-                      <div>
-                        <div className="text-xs text-gray-400">EMAIL</div>
-                        <div className="text-sm truncate">luisdetaza.dev@gmail.com</div>
-                      </div>
-                    </div>
-                    {/* Phone */}
-                    <div className="flex items-center gap-3">
-                      <span className="bg-[#232324] p-2 rounded-lg">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" className="text-white">
-                          <path d="M17 13.5V16a1 1 0 0 1-1 1c-7.18 0-13-5.82-13-13a1 1 0 0 1 1-1h2.5a1 1 0 0 1 1 0.77c0.22 1.02 0.56 2.01 1 2.94a1 1 0 0 1-0.23 1.09l-1.1 1.1a11.05 11.05 0 0 0 5.02 5.02l1.1-1.1a1 1 0 0 1 1.09-0.23c0.93 0.44 1.92 0.78 2.94 1a1 1 0 0 1 0.77 1z" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </span>
-                      <div>
-                        <div className="text-xs text-gray-400">PHONE</div>
-                        <div className="text-sm">09264682796</div>
-                      </div>
-                    </div>
-                    {/* Birthday */}
-                    <div className="flex items-center gap-3">
-                      <span className="bg-[#232324] p-2 rounded-lg">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" className="text-white">
-                          <rect x="7" y="9" width="6" height="7" rx="2" strokeWidth="1.5"/>
-                          <path d="M10 9V5.5" strokeWidth="1.5" strokeLinecap="round"/>
-                          <path d="M10 5.5c0-1 .5-1.5 1-2s-1-1-1 0c0 1-.5 1.5-1 2s1 1 1 0z" strokeWidth="1.5" strokeLinecap="round" fill="white"/>
-                        </svg>
-                      </span>
-                      <div>
-                        <div className="text-xs text-gray-400">BIRTHDAY</div>
-                        <div className="text-sm">October 10, 2004</div>
-                      </div>
-                    </div>
-                    {/* Location */}
-                    <div className="flex items-center gap-3">
-                      <span className="bg-[#232324] p-2 rounded-lg">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" className="text-white">
-                          <path d="M10 18c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8Z" strokeWidth="1.5"/>
-                          <path d="M10 10.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm0 0v3.5" strokeWidth="1.5" strokeLinecap="round"/>
-                        </svg>
-                      </span>
-                      <div>
-                        <div className="text-xs text-gray-400">LOCATION</div>
-                        <div className="text-sm">Mandaluyong City</div>
-                      </div>
-                    </div>
-                    {/* Social Icons */}
-                    <div className="flex gap-4 mt-4">
-                      <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-facebook-f"></i></a>
-                      <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-twitter"></i></a>
-                      <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-instagram"></i></a>
-                      <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-linkedin-in"></i></a>
-                      <a href="#" className="text-gray-400 hover:text-[#B22222]"><i className="fab fa-github"></i></a>
-                    </div>
+            <div className="grid grid-cols-2 gap-3 w-full max-w-xs mx-auto">
+              {/* Email */}
+              <a href="mailto:luisdetaza.dev@gmail.com" className="group flex flex-col items-center text-gray-400 hover:text-[#B22222] text-xs">
+                <span className="bg-[#232324] p-2 rounded-full mb-1">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" className="text-white">
+                    <rect x="2" y="5" width="14" height="8" rx="2" strokeWidth="1.3"/>
+                    <path d="M2 5l7 6 7-6" strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
+                </span>
+                luisdetaza.dev@gmail.com
+              </a>
+              {/* Phone */}
+              <a href="tel:09264682796" className="group flex flex-col items-center text-gray-400 hover:text-[#B22222] text-xs">
+                <span className="bg-[#232324] p-2 rounded-full mb-1">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" className="text-white">
+                    <path d="M15 12.5V15a1 1 0 0 1-1 1c-5.5 0-10-4.5-10-10a1 1 0 0 1 1-1h2a1 1 0 0 1 1 .7c.18.8.46 1.6.8 2.3a1 1 0 0 1-.18 1.1l-.9.9a8.5 8.5 0 0 0 4.1 4.1l.9-.9a1 1 0 0 1 1.1-.18c.7.34 1.5.62 2.3.8a1 1 0 0 1 .7 1z" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+                09264682796
+              </a>
+              {/* Birthday */}
+              <span className="group flex flex-col items-center text-gray-400 text-xs cursor-default">
+                <span className="bg-[#232324] p-2 rounded-full mb-1">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" className="text-white">
+                    <path d="M4 10v4a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-4" strokeWidth="1.3"/>
+                    <rect x="3" y="6" width="12" height="4" rx="2" strokeWidth="1.3"/>
+                    <circle cx="9" cy="9" r="1" fill="currentColor"/>
+                  </svg>
+                </span>
+                10/10/2004
+              </span>
+              {/* Location */}
+              <span className="group flex flex-col items-center text-gray-400 text-xs cursor-default">
+                <span className="bg-[#232324] p-2 rounded-full mb-1">
+                  <svg width="18" height="18" fill="none" stroke="currentColor" className="text-white">
+                    <path d="M9 16c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6Z" strokeWidth="1.3"/>
+                    <circle cx="9" cy="10" r="2" strokeWidth="1.3"/>
+                  </svg>
+                </span>
+                Mandaluyong City
+              </span>
+            </div>
+            <div className="flex gap-4 mt-2 justify-center">
+              <a href="#" className="text-gray-400 hover:text-[#B22222] text-lg" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
+              <a href="#" className="text-gray-400 hover:text-[#B22222] text-lg" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
+              <a href="#" className="text-gray-400 hover:text-[#B22222] text-lg" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
+              <a href="#" className="text-gray-400 hover:text-[#B22222] text-lg" aria-label="LinkedIn"><i className="fab fa-linkedin-in"></i></a>
+              <a href="#" className="text-gray-400 hover:text-[#B22222] text-lg" aria-label="GitHub"><i className="fab fa-github"></i></a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
