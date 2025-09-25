@@ -49,7 +49,7 @@ export default function Blog() {
   return (
     <motion.section
       id="blog"
-      className="pt-4 pb-6 px-4 max-w-6xl mx-auto md:ml-[20rem]"
+      className="mt-24 md:mt-0 pt-4 pb-6 px-4 max-w-6xl mx-auto md:ml-[20rem]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}

@@ -5,13 +5,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function SidebarMobile() {
   const [showContact, setShowContact] = useState(false);
-  return (
-    <motion.div
-      className="md:hidden fixed top-6 left-1/5 -translate-x-1/2 w-[92vw] max-w-2xl z-50 bg-[#1B1B1B]/50 border border-[#2A2A2A] backdrop-blur-xl shadow-2xl rounded-2xl ring-2 ring-white/10 px-6 py-4 flex flex-col items-center"
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 120, damping: 12 }}
-    >
+    return (
+      <motion.div
+        className="md:hidden fixed top-2 left-1/5 -translate-x-1/2 w-[92vw] max-w-2xl z-20 bg-[#1B1B1B]/50 border border-[#2A2A2A] backdrop-blur-xl shadow-2xl rounded-2xl px-6 py-4 flex flex-col items-center"
+        style={{ marginBottom: "env(safe-area-inset-bottom, 0)" }}
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 120, damping: 12 }}
+      >
       <img
         src={profileimg}
         alt="Profile"
