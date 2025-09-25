@@ -3,7 +3,6 @@ import profileimg from "../images/profile.png";
 
 export default function SidebarDesktop() {
   return (
-<<<<<<< HEAD
     <aside
       className="hidden md:flex flex-col items-center bg-[#1B1B1B] rounded-2xl p-8 w-80 min-h-[70vh] border border-[#2A2A2A] shadow-lg mt-4 h-fit"
       style={{
@@ -17,9 +16,6 @@ export default function SidebarDesktop() {
         overflowY: 'auto',
       }}
     >
-=======
-    <aside className="hidden md:flex flex-col items-center bg-[#1B1B1B] rounded-2xl p-8 w-80 min-h-[70vh] border border-[#2A2A2A] shadow-lg mt-4 sticky top-28 self-start h-fit">
->>>>>>> c8b104b2d0cbb399fa2a91b411ae39982394a949
       <img
         src={profileimg}
         alt="Profile"

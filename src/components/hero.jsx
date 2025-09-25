@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <motion.section
-<<<<<<< HEAD
-  className="flex flex-col justify-center items-center text-center pt-20 pb-4 px-4 md:ml-[20rem]"
-=======
-      className="flex flex-col justify-center items-center text-center py-4 px-4"
->>>>>>> c8b104b2d0cbb399fa2a91b411ae39982394a949
+      className="flex flex-col justify-center items-center text-center pt-20 pb-4 px-4 md:ml-[20rem]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
