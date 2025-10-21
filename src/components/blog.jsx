@@ -4,10 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 // import images from src/images (adjust filenames if yours differ)
-import b5 from "../images/5.jpg";
-import b6 from "../images/6.jpg";
-import b7 from "../images/7.jpg";
-import b8 from "../images/8.jpg";
+import b5 from " ";
+import b6 from " ";
+import b7 from " ";
+import b8 from " ";
 
 export default function Blog() {
   const [filter, setFilter] = useState("All");
