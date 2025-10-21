@@ -3,10 +3,10 @@ import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-import p1 from "../images/1.jpg";
-import p2 from "../images/2.jpg";
-import p3 from "../images/3.jpg";
-import p4 from "../images/4.jpg";
+import p1 from " ";
+import p2 from " ";
+import p3 from " ";
+import p4 from " ";
 import p5 from "../images/rjl.png";
 
 export default function Projects() {
