@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 // src/components/projects.jsx
-import { useState } from "react";
-// eslint-disable-next-line no-unused-vars
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import p1 from "../images/1.jpg";
@@ -8,14 +8,33 @@ import p2 from "../images/rjl.png";
 import p3 from "../images/3.png";
 import p5 from "../images/2.png";
 
+// --- Skeleton Loader Component ---
+function ProjectSkeleton() {
+  return (
+    <div className="bg-[#232324] rounded-xl shadow overflow-hidden flex flex-col h-full animate-pulse">
+      <div className="w-full h-40 sm:h-48 bg-gray-700" />
+      <div className="p-6 flex flex-col flex-1">
+        <div className="h-3 w-16 bg-gray-600 mb-3 rounded"></div>
+        <div className="h-5 w-2/3 bg-gray-500 mb-3 rounded"></div>
+        <div className="flex-1 space-y-2">
+          <div className="h-3 w-full bg-gray-600 rounded"></div>
+          <div className="h-3 w-5/6 bg-gray-600 rounded"></div>
+          <div className="h-3 w-3/4 bg-gray-600 rounded"></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Projects() {
   const [filter, setFilter] = useState("All");
+  const [loading, setLoading] = useState(true);
 
   const projects = [
     {
       title: "Unilibrary",
       category: "Web",
-      desc: "A high-performance library management system featuring custom role-based access control and a normalized MySQL schema, developed in 48 hours to secure 2nd place at the Caffeine Hackathon. ",
+      desc: "A high-performance library management system featuring custom role-based access control and a normalized MySQL schema, developed in 48 hours to secure 2nd place at the Caffeine Hackathon.",
       img: p1,
     },
     {
@@ -43,6 +62,12 @@ export default function Projects() {
     filter === "All"
       ? projects
       : projects.filter((p) => p.category === filter);
+
+  // Simulate data loading
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1500); // 1.5s delay
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <motion.section
@@ -77,34 +102,36 @@ export default function Projects() {
 
         {/* Project grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {filteredProjects.map((project, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{
-                scale: 1.03,
-                boxShadow: "0 8px 30px rgba(255,255,255,0.04)",
-              }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="bg-[#232324] rounded-xl shadow overflow-hidden flex flex-col h-full"
-            >
-              <img
-                src={project.img}
-                alt={project.title}
-                className="w-full h-40 sm:h-48 object-cover"
-              />
-              <div className="p-6 flex flex-col flex-1">
-                <div className="text-gray-400 text-xs mb-2">
-                  {project.category}
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-white">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 text-sm sm:text-base mt-2 flex-1">
-                  {project.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          {loading
+            ? Array.from({ length: 4 }).map((_, idx) => <ProjectSkeleton key={idx} />)
+            : filteredProjects.map((project, idx) => (
+                <motion.div
+                  key={idx}
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 8px 30px rgba(255,255,255,0.04)",
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="bg-[#232324] rounded-xl shadow overflow-hidden flex flex-col h-full"
+                >
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-40 sm:h-48 object-cover"
+                  />
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="text-gray-400 text-xs mb-2">
+                      {project.category}
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-white">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm sm:text-base mt-2 flex-1">
+                      {project.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
         </div>
       </div>
     </motion.section>

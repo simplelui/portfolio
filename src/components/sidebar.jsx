@@ -8,8 +8,7 @@ export default function SidebarDesktop() {
       style={{
         position: 'fixed',
         top: '7rem', // 32px from the top
-        left: '5rem', // increased gap from the left (56px)
-        zIndex: 30,
+        left: '50px', // increased gap from the left (56px)
         alignSelf: 'flex-start',
         height: 'auto',
         maxHeight: '90vh',
