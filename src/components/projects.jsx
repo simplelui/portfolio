@@ -3,76 +3,38 @@ import { useState } from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-import p1 from " ";
-import p2 from " ";
-import p3 from " ";
-import p4 from " ";
-import p5 from "../images/rjl.png";
+import p1 from "../images/1.jpg";
+import p2 from "../images/rjl.png";
+import p3 from "../images/3.png";
+import p5 from "../images/2.png";
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
 
   const projects = [
     {
-      title: "Portfolio Website",
+      title: "Unilibrary",
       category: "Web",
-      desc: "A modern responsive portfolio website built with React and Tailwind.",
+      desc: "A high-performance library management system featuring custom role-based access control and a normalized MySQL schema, developed in 48 hours to secure 2nd place at the Caffeine Hackathon. ",
       img: p1,
     },
     {
-      title: "Pixel Adventure Game",
+      title: "RhajLu",
       category: "Game",
-      desc: "A 2D adventure game created using Unity with pixel art assets.",
+      desc: "A proof-of-concept project using the Godot engine to explore advanced game state management, physics, and debugging principles in a non-web environment.",
       img: p2,
     },
     {
-      title: "UI/UX Design Dashboard",
-      category: "Design",
-      desc: "A clean and user-friendly dashboard concept made in Figma.",
+      title: "PALDOGS",
+      category: "Web",
+      desc: "A modern, responsive platform built with React and Tailwind CSS, demonstrating proficiency in leveraging the Supabase BaaS for secure authentication and real-time data persistence.",
       img: p3,
     },
     {
-      title: "Video Editing Project",
-      category: "Video",
-      desc: "A cinematic short film edited with Adobe Premiere Pro and After Effects.",
-      img: p4,
-    },
-    // merged in from remote
-    {
       title: "Wanderly",
       category: "Web",
-      desc: "Web Development",
-      img: p4,
-    },
-    {
-      title: "Orizon",
-      category: "Web",
-      desc: "Web Development",
-      img: p1,
-    },
-    {
-      title: "Fundo",
-      category: "Design",
-      desc: "UI/UX Design",
-      img: p2,
-    },
-    {
-      title: "Rhajlu Adventure",
-      category: "Game",
-      desc: "Game Development",
+      desc: "A complex application that highlights expertise in full-stack API integration and asynchronous data handling to create and manage detailed user trip itineraries.",
       img: p5,
-    },
-    {
-      title: "DSM.",
-      category: "Design",
-      desc: "UI/UX Design",
-      img: p2,
-    },
-    {
-      title: "MetaSpark",
-      category: "Design",
-      desc: "UI/UX Design",
-      img: p1,
     },
   ];
 
@@ -140,9 +102,6 @@ export default function Projects() {
                 <p className="text-gray-300 text-sm sm:text-base mt-2 flex-1">
                   {project.desc}
                 </p>
-                <button className="mt-4 self-start text-sm text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition-colors">
-                  View Project
-                </button>
               </div>
             </motion.div>
           ))}

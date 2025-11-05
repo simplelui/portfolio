@@ -4,42 +4,19 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 // import images from src/images (adjust filenames if yours differ)
-import b5 from " ";
-import b6 from " ";
-import b7 from " ";
-import b8 from " ";
+import b5 from "../images/profile.png";
+
 
 export default function Blog() {
   const [filter, setFilter] = useState("All");
 
   const posts = [
     {
-      title: "Mandaluyong City: A Vibrant Urban Hub",
+      title: "RTU",
       date: "Feb 23, 2022",
-      category: "Food",
-      desc: "Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
-      img: b5,
-    },
-    {
-      title: "Latest Game Release Review",
-      date: "Mar 5, 2022",
-      category: "Game",
-      desc: "A deep dive into the mechanics and visuals of the newest hit game.",
-      img: b6,
-    },
-    {
-      title: "Chainsaw Massacre Movie Review",
-      date: "Apr 12, 2022",
-      category: "Movie",
-      desc: "Exploring the narrative depth and visuals of this award-winning movie.",
-      img: b7,
-    },
-    {
-      title: "Random Thoughts: Late Night Musings",
-      date: "May 1, 2022",
       category: "Random",
-      desc: "A personal reflection on life, creativity, and inspiration.",
-      img: b8,
+      desc: "Currently pursuing a BSIT, applying expertise in modern web development to build a specialization in Cloud and Cyber Security principles.",
+      img: b5,
     },
   ];
 
